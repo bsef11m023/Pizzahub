@@ -1,0 +1,160 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Project.Models.User
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="bootstrap.css" rel="stylesheet" />
+
+    <title></title>
+</head>
+<body id="<">
+       <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Registration Form</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav nav-left pull-right">
+                <li class="active"><a href="#">About</a></li>
+                <li><a href="#">Prefrences</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <div class="row">
+      
+         <div class="col-md-2" style="margin-left:100px">
+            <h3>Details</h3>
+        </div> 
+        
+  <div class="col-md-3">
+      <br /><br />
+      <div class="form-group">
+          <br />
+          <form method="post" action="/User/index1">
+              @using(Html.BeginForm())
+              {
+
+<br /><br />        <table>
+    <tr>
+                <td>
+                    <h5>Name</h5>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name, new {placeholder="Name"})
+                    @Html.ValidationMessageFor(m=>m.Name)
+                    <!--input type="text" name="Name" class="form-control" placeholder="Name" /!--></td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>UserName</h5>
+                </td>
+                <td>
+                   @Html.TextBoxFor(m => m.Name, new {id="UserName" ,placeholder="UserName" })
+                    @Html.ValidationMessageFor(m=>m.UserName)
+                    <!--input type="text" name="UserName" id="UserName" class="form-control" placeholder="User Name" /!--></td>
+                <td>
+                    <input type="button" id="b1" value="Check" />
+                </td>
+                <td>
+                <div id="result"> </div>
+               </td>
+                @Scripts.Render("~/bundles/jquery")
+
+                <script>
+
+                    $(document).ready(function () {
+
+                        $('#checking').hide();
+
+                        $('#b1').click(function () {
+
+                            var UserName = $('#UserName').val();
+                            //alert('User Name =' + UserName);
+
+                            $('#checking').show();
+                            $.getJSON("/Home/CheckUserName?UserName=" + UserName, function (data) {
+                                $('#checking').hide();
+                                if (data) {
+                                    $('#result').text("User already exists in database");
+
+                                }
+                                else {
+                                    $('#result').text("User Name is available");
+                                }
+                            });
+
+                        });
+
+                    });
+        </script>
+                    
+ 
+            </tr>
+            <tr>
+                <td>
+                    <h5>Password</h5>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Password, new {placeholder="Password" })
+                    @Html.ValidationMessageFor(m=>m.Password)
+                    <!--input type="password" name="Password" class="form-control" placeholder="Password" /!--></td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Re-type Password</h5>
+                </td>
+                <td>
+                    
+                    <input type="password" name="rpassword" class="form-control" placeholder=" Retype Password" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Age</h5>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Age, new {placeholder="Age" })
+                    @Html.ValidationMessageFor(m=>m.Age)
+                    <!--input type="text" name="Age" class="form-control" placeholder="Age" /!--></td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Address</h5>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Address, new {placeholder="Address" })
+                    @Html.ValidationMessageFor(m=>m.Address)
+                    <!--input type="text" name="Address" class="form-control" placeholder="Address" /!--></td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h5>@Html.LabelFor(m => m.Type)</h5>
+                </td>
+                <td>
+                    
+                    <select name="Type" class="form-control">
+                    <option>Admin</option><option>Customer</option></select></td>
+            </tr>
+             <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Sign up</button>
+                    </td>
+                </tr>
+        </table>
+              }
+              </form>
+
+    </div>
+    
+  </div>
+        
+      <div>
+        
+    </div>
+    <div class="alert alert-danger">Every Block is necessary to be filled</div>
+
+    
+    </body>
+</html>

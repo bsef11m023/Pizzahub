@@ -1,0 +1,39 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Project.Models.item
+<!DOCTYPE HTML>
+	<body>
+		 <!---start-content---->
+        <!--form action="/Admin/Upload" method="post" enctype="multipart/form-data" !-->
+           @using (Html.BeginForm("Upload1", "Admin", FormMethod.Post, new {enctype="multipart/form-data" }))
+           {
+               
+               
+               <h3 style="color:white">Upload Image:</h3><input type="file" name="Path" />
+                
+               <br />
+               <h3 style="color:white">Type</h3>
+               @Html.TextBoxFor(m => m.Name, new { placeholder = "Name" })
+               <br />
+               <h3 style="color:white">Item Name</h3>
+               @Html.TextBoxFor(m => m.ItemName, new { placeholder = "Item Name" })
+               <br />
+               <h3 style="color:white">Price</h3>
+               @Html.TextBoxFor(m => m.Price, new { placeholder = "Price" })
+               <br />
+               <input type="submit" value="Upload" />
+               
+           }
+            
+		 	
+		 <!---End-content---->
+	</body>
+
+

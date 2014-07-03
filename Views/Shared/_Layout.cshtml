@@ -1,0 +1,103 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <title>Multicusine Website Template | Home :: W3layouts</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="~/content/style.css" rel="stylesheet" type="text/css"  media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="~/content/slider.css" rel="stylesheet" type="text/css"  media="all" />
+  <script type="text/javascript" src="~/Script/jquery.min.js"></script> 
+  <script type="text/javascript" src="~/Script/jquery.easing.1.3.js"></script> 
+  <script type="text/javascript" src="~/Script/camera.min.js"></script>
+  <script type="text/javascript" src="~/Script/jquery.lightbox.js"></script> 
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+  <link rel="stylesheet" type="text/css" href="~/content/lightbox.css" media="screen" />
+	  <script type="text/javascript">
+	      $(function () {
+	          $('.gallery a').lightBox();
+	      });
+	  </script>
+	 <script type="text/javascript">
+	     jQuery(function () {
+	         jQuery('#camera_wrap_1').camera({
+	             pagination: false,
+	         });
+	     });
+	 </script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!----start-header----->
+	 <div class="header">
+	     <div class="wrap">
+			<div class="top-header">
+				<div class="logo">
+					<img src="~/images/logo.png" title="logo" />
+				</div>
+				<div class="social-icons">
+					<ul>
+						<li><a href="https://www.facebook.com/"><img src="~images/facebook.png" title="facebook" /></a></li>
+						<li><a href="https://www.twitter.com/"><img src="~/images/twitter.png" title="twitter" /></a></li>
+						<li><a href="https://www.google.com/"><img src="~/images/google.png" title="google pluse" /></a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<!---start-top-nav---->
+             				
+			<!---End-top-nav---->
+		</div>
+   <!----End-header----->
+        @RenderBody()
+    <!---start-footer---->
+		 <div class="footer">
+		<div class="wrap">
+			<div class="footer-grid">
+				<h3>About us</h3>
+				<p>----------------------</p>
+			
+			</div>
+			<div class="footer-grid center-grid">
+				<h3>Recent posts</h3>
+				<ul>
+					<li><>Home</></li>
+					<li>Veri Delicious, @@Saeed</li>
+				
+					<li>Fit hai Boss, @@Anwar</li>
+					<li>Awww Its very very tasty, @@Sumaiya</li>
+				</ul>
+			</div>
+			<div class="footer-grid twitts">
+				<h3>Latest Tweets</h3>
+                <p>Delicious, Delicious , Delicious, umahh, m loving it @@Zainab</p>
+			</div>
+			<div class="footer-grid">
+				<h3>DID YOU KNOW?</h3>
+				<p></p>
+			</div>
+			<div class="clear"> </div>
+		</div>
+		<div class="clear"> </div>
+	</div>
+	<div class="copy-right">
+		<div class="top-to-page">
+						<a href="#top" class="scroll"> </a>
+						<div class="clear"> </div>
+					</div>
+	</div>
+		 <!---End-footer---->
+
+    </body>
+</html>

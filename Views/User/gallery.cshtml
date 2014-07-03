@@ -1,0 +1,49 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE HTML>
+<body>
+	   <div class="top-nav">
+				<div class="top-nav-left">
+					<ul>
+						
+						<li class="active"><a href="gallery.html">Items</a></li>
+						<li><a href="~/User/contact">Search</a></li>
+						<li id="logout"><a href="~/User/Signout" style="color:white">Logout</a></li>
+
+					</ul>
+                   
+				<div class="clear"> </div>
+			</div>
+
+          </div>
+
+		
+		 	<!---start-gallery----->
+             <div class="row">
+            @foreach (var i in ViewBag.Catagory)
+            {
+                <br /><br /><br />
+
+                    <div>
+                        <ul style="list-style-type:none; padding-left:6px">
+                            <li><img src="~/Images/@i.Path"/></li>
+                            <li style="color:white" >@i.ItemName</li>
+                            <li style="color:white">@i.Price PKR</li>
+                        </ul>
+                    </div>
+                
+
+                // <li>@i.Pname</li>
+            }
+                 </div>
+   
+		 	<!---End-gallery----->
+		 <!---End-content---->
+	</body>
+
+
